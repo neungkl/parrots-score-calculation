@@ -47,6 +47,13 @@ textarea {
   box-sizing: border-box;
 }
 
+a {
+  color: inherit;
+}
+a:hover {
+  color: #eee;
+}
+
 .error {
   background-color: rgb(213, 26, 26);
   color: #fff;
