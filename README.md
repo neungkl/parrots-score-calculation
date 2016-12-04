@@ -41,7 +41,7 @@ And also include,
 
 ## Usage
 
-## Run
+### Run
 
 Just clone this project and open `index.html`
 
