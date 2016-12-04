@@ -21,6 +21,13 @@
 
   <div class="row">
     <div class="small-12 large-6 large-centered columns">
+      <a class="github-button" href="https://github.com/neungkl/parrots-score-calculation" data-icon="octicon-star" data-style="mega" data-count-href="/neungkl/parrots-score-calculation/stargazers" data-count-api="/repos/neungkl/parrots-score-calculation#stargazers_count"
+          data-count-aria-label="# stargazers on GitHub" aria-label="Star neungkl/parrots-score-calculation on GitHub">Star</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 large-6 large-centered columns">
       <div>Enter your score :</div>
       <div class="space-v-small"></div>
       <div class="thin-font">Copy the result and paste on the input box below, then click calculate button.</div>
@@ -68,18 +75,10 @@
 
         $('.summarize').html(
           '<div>You use ' + result.sum + ' / ' + result.expectSum + ' birds. ' +
-          'With ratio <span class="' + ratioToColor(ratio) + '-box">&nbsp;' + Math.floor(ratio * 100) / 100 + '&nbsp;</span></div>'
-        );
-        $('.error').hide();
-      } else {
-        $('.error').show().text(result.msg);
-      }
-    });
-
-  });
+          'With ratio <span class="' + ratioToColor(ratio) + '-box">&nbsp;' + Math.floor(ratio * 100) / 100 + '&nbsp;</span></div>' ); $('.error').hide(); } else { $('.error').show().text(result.msg); } }); });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.4/foundation.js"></script>
-
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 
 </html>
