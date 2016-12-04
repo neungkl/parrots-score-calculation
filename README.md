@@ -15,7 +15,7 @@ Parrots is IOI 2011 task that use for final project of algorithm study class. Th
 But if you would like to read the task. You can read more detail here *The link is not available yet*<br>
 or googling with "Parrots IOI" keywords.
 
-You must write a C or C++ for this task and submitted to local judge website. (created by professor in my university)
+You must write a C or C++ for this task and submitted to local judge website. (created by doctoral lecturer in my university)
 
 But the result is rather hard for examine. Here are an example of result.
 
