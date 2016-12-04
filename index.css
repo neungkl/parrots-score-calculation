@@ -64,6 +64,13 @@ a:hover {
   background-color: #109ac6;
 }
 
+.green-black-box {
+  text-align: center;
+  padding: 5px 3px;
+  min-width: 60px;
+  background-color: rgb(56, 101, 12);
+  color: #fff;
+}
 .green-box {
   text-align: center;
   padding: 5px 3px;
