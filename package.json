@@ -1,0 +1,23 @@
+{
+  "name": "parrots-score-calculation",
+  "version": "1.0.0",
+  "description": "Calculator of Parrots score",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neungkl/parrots-score-calculation.git"
+  },
+  "author": "Kosate Limpongsa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neungkl/parrots-score-calculation/issues"
+  },
+  "homepage": "https://github.com/neungkl/parrots-score-calculation#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
