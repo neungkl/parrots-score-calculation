@@ -42,13 +42,22 @@
     </div>
   </div>
 
-  <div class="space-v-lar"></div>
+  <div class="space-v-small"></div>
 
   <div class="row">
     <div class="small-12 large-6 large-centered columns">
       <div>Result :</div>
-      <div class="result thin-font table-scroll">
+      <div class="space-v-small"></div>
+      <div class="result-msg thin-font">
         <i>No result available.</i>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 large-10 large-centered columns">
+      <div class="space-v-small"></div>
+      <div class="result thin-font table-scroll">
+
       </div>
       <div class="summarize thin-font">
       </div>
@@ -71,13 +80,22 @@
 
       if (result.pass) {
         var result = dataToTable(result.data);
+        $('.result-msg').hide();
         $('.result').html(result.html);
 
         var ratio = result.sum / result.expectSum;
 
         $('.summarize').html(
           '<div>You use ' + result.sum + ' / ' + result.expectSum + ' birds. ' +
-          'With ratio <span class="' + ratioToColor(ratio) + '-box">&nbsp;' + Math.floor(ratio * 100) / 100 + '&nbsp;</span></div>' ); $('.error').hide(); } else { $('.error').show().text(result.msg); } }); });
+          'With ratio <div class="ratio-box result-box ' + ratioToColor(ratio) + '-box">&nbsp;' +
+          Math.floor(ratio * 100) / 100 + '&nbsp;</div></div>'
+        );
+        $('.error').hide();
+      } else {
+        $('.error').show().text(result.msg);
+      }
+    });
+  });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.4/foundation.js"></script>
   <script async defer src="https://buttons.github.io/buttons.js"></script>

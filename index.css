@@ -64,31 +64,33 @@ a:hover {
   background-color: #109ac6;
 }
 
-.green-black-box {
+.result-box {
   text-align: center;
   padding: 5px 3px;
   min-width: 60px;
+  font-size: 0.95em;
+}
+
+.ratio-box {
+  display: inline-block;
+  margin-top: 5px;
+  padding-top: 5px;
+  font-size: 1.2em;
+}
+
+.green-black-box {
   background-color: rgb(56, 101, 12);
   color: #fff;
 }
 .green-box {
-  text-align: center;
-  padding: 5px 3px;
-  min-width: 60px;
   background-color: rgb(91, 162, 20);
   color: #fff;
 }
 .yellow-box {
-  text-align: center;
-  padding: 5px 3px;
-  min-width: 60px;
   background-color: rgb(235, 233, 26);
   color: #666;
 }
 .red-box {
-  text-align: center;
-  padding: 5px 3px;
-  min-width: 60px;
   background-color: rgb(213, 26, 26);
   color: #fff;
 }

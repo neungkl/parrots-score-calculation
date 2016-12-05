@@ -125,7 +125,7 @@ var dataToTable = function(data) {
         var ratio = data[i][j] / expectScore[i][j];
         var color = ratioToColor(ratio);
 
-        txt += '<div class="' + color + '-box" style="width:110px;">'
+        txt += '<div class="' + color + '-box result-box" style="width:100px;">'
         txt += '<div>' + data[i][j] + ' / ' + expectScore[i][j] + '</div>';
         txt += '<div>' + Math.floor(data[i][j] / expectScore[i][j] * 100) / 100 + '</div>';
         txt += '</div>';
