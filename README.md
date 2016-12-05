@@ -6,7 +6,7 @@ A project to passing the score result and parsing it to easily visually version.
 
 Try demo [https://neungkl.github.io/parrots-score-calculation/](https://neungkl.github.io/parrots-score-calculation/)
 
-<img src="preview.png" height="500">
+<img src="preview.png" width="600">
 
 ## Introduction
 

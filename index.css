@@ -67,30 +67,39 @@ a:hover {
 .result-box {
   text-align: center;
   padding: 5px 3px;
-  min-width: 60px;
+  width: 100px;
   font-size: 0.95em;
 }
 
 .ratio-box {
   display: inline-block;
   margin-top: 5px;
-  padding-top: 5px;
+  margin-left: 3px;
+  padding: 4px 10px 5px;
+  font-size: 1.2em;
+}
+.error-case-box {
+  padding: 12px 3px;
   font-size: 1.2em;
 }
 
-.green-black-box {
-  background-color: rgb(56, 101, 12);
+.cyan-box {
+  background-color: rgb(15, 146, 129);
   color: #fff;
 }
 .green-box {
-  background-color: rgb(91, 162, 20);
+  background-color: rgb(84, 154, 13);
   color: #fff;
 }
 .yellow-box {
-  background-color: rgb(235, 233, 26);
+  background-color: rgb(247, 221, 19);
   color: #666;
 }
+.orange-box {
+  background-color: rgb(251, 151, 23);
+  color: #fff;
+}
 .red-box {
-  background-color: rgb(213, 26, 26);
+  background-color: rgb(220, 43, 43);
   color: #fff;
 }

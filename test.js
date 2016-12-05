@@ -60,3 +60,5 @@ describe('Test Parser', function() {
     })(i);
   }
 });
+
+[uses 80 parrots][[uses 800 parrots][uses 1600 parrots][uses 3000 parrots][uses 4000 parrots]][[uses 5000 parrots][uses 3000 parrots][uses 1600 parrots][uses 2000 parrots]][[uses 3000 parrots]-[uses 5000 parrots][uses 5000 parrots][uses 4000 parrots][uses 2000 parrots]][[uses 3456 parrots][uses 12345 parrots][uses 12345 parrots][uses 12345 parrots][uses 12345 parrots]X-]

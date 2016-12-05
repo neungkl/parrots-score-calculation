@@ -87,10 +87,10 @@ var extractInfomation = function(str) {
 };
 
 var ratioToColor = function(ratio) {
-  if (ratio < 4) return 'green-black'
+  if (ratio < 4) return 'cyan'
   if (ratio < 5) return 'green';
   if (ratio < 10) return 'yellow';
-  return 'red';
+  return 'orange';
 }
 
 var dataToTable = function(data) {
@@ -125,13 +125,13 @@ var dataToTable = function(data) {
         var ratio = data[i][j] / expectScore[i][j];
         var color = ratioToColor(ratio);
 
-        txt += '<div class="' + color + '-box result-box" style="width:100px;">'
+        txt += '<div class="' + color + '-box result-box">'
         txt += '<div>' + data[i][j] + ' / ' + expectScore[i][j] + '</div>';
         txt += '<div>' + Math.floor(data[i][j] / expectScore[i][j] * 100) / 100 + '</div>';
         txt += '</div>';
         sum += data[i][j];
       } else {
-        txt += '<div class="red-box">' + data[i][j] + '</div>';
+        txt += '<div class="red-box error-case-box result-box">' + data[i][j] + '</div>';
       }
 
       txt += '</td>';
