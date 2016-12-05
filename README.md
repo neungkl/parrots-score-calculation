@@ -36,7 +36,7 @@ And also include,
 
 - The size of input data set provide
 - Ratio calculation supported
-- Reporting for for scoring in each task
+- Reporting for scoring in each subtask
 - Overall summarize the score
 
 ## Usage
