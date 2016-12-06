@@ -88,7 +88,7 @@
         $('.summarize').html(
           '<div>You use ' + result.sum + ' / ' + result.expectSum + ' birds. ' +
           'With ratio <div class="ratio-box ' + ratioToColor(ratio) + '-box">&nbsp;' +
-          Math.floor(ratio * 100) / 100 + '&nbsp;</div></div>'
+          Math.round(ratio * 100) / 100 + '&nbsp;</div></div>'
         );
         $('.error').hide();
       } else {

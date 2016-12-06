@@ -127,7 +127,7 @@ var dataToTable = function(data) {
 
         txt += '<div class="' + color + '-box result-box">'
         txt += '<div>' + data[i][j] + ' / ' + expectScore[i][j] + '</div>';
-        txt += '<div>' + Math.floor(data[i][j] / expectScore[i][j] * 100) / 100 + '</div>';
+        txt += '<div>' + Math.round(data[i][j] / expectScore[i][j] * 100) / 100 + '</div>';
         txt += '</div>';
         sum += data[i][j];
       } else {
