@@ -87,6 +87,7 @@ var extractInfomation = function(str) {
 };
 
 var ratioToColor = function(ratio) {
+  if (ratio < 3) return 'purple';
   if (ratio < 5) return 'cyan'
   if (ratio < 7) return 'green';
   if (ratio < 10) return 'yellow';

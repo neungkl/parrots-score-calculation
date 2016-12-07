@@ -89,8 +89,12 @@ a:hover {
   font-size: 1.2em;
 }
 
+.purple-box {
+  background-color: rgb(99, 11, 153);
+  color: #fff;
+}
 .cyan-box {
-  background-color: rgb(15, 146, 129);
+  background-color: rgb(10, 135, 175);
   color: #fff;
 }
 
@@ -112,4 +116,9 @@ a:hover {
 .red-box {
   background-color: rgb(220, 43, 43);
   color: #fff;
+}
+
+.color-explain-each {
+  display: inline-block;
+  margin-bottom: 2px;
 }
