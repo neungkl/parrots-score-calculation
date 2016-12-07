@@ -50,6 +50,7 @@ textarea {
 a {
   color: inherit;
 }
+
 a:hover {
   color: #eee;
 }
@@ -71,6 +72,10 @@ a:hover {
   font-size: 0.95em;
 }
 
+.desc-box {
+  padding: 2px 3px;
+}
+
 .ratio-box {
   display: inline-block;
   margin-top: 5px;
@@ -78,6 +83,7 @@ a:hover {
   padding: 4px 10px 5px;
   font-size: 1.2em;
 }
+
 .error-case-box {
   padding: 12px 3px;
   font-size: 1.2em;
@@ -87,18 +93,22 @@ a:hover {
   background-color: rgb(15, 146, 129);
   color: #fff;
 }
+
 .green-box {
   background-color: rgb(84, 154, 13);
   color: #fff;
 }
+
 .yellow-box {
   background-color: rgb(247, 221, 19);
   color: #666;
 }
+
 .orange-box {
   background-color: rgb(251, 151, 23);
   color: #fff;
 }
+
 .red-box {
   background-color: rgb(220, 43, 43);
   color: #fff;
