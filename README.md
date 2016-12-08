@@ -15,7 +15,8 @@ Parrots is IOI 2011 task that use for final project of algorithm study class. Th
 But if you would like to read the task. You can read more detail here *The link is not available yet*<br>
 or googling with "Parrots IOI" keywords.
 
-You must write a C or C++ for this task and submitted to local judge website. (created by doctoral lecturer in my university)
+You must write a C or C++ for solve the task and submitted to local judge website. (created by doctoral lecturer in my university)
+Then, the website will grading your code and sent the result to you.
 
 But the result is rather hard for examine. Here are an example of result.
 
@@ -30,14 +31,15 @@ But the result is rather hard for examine. Here are an example of result.
 [ [uses 40 parrots][[uses 10 parrots][uses 20 parrots][uses 30 parrots][uses 40 parrots]][[uses 100 parrots][uses 200 parrots][uses 300 parrots][uses 400 parrots]][[uses 1000 parrots][uses 2000 parrots][uses 3000 parrots][uses 4000 parrots][uses 5000 parrots][uses 6000 parrots]][[uses 1000 parrots][uses 2000 parrots][uses 3000 parrots][uses 4000 parrots][uses 5000 parrots][uses 6000 parrots][uses 7000 parrots]] ]
 ```
 
-So, I end up with creating a website that analyze the score and visualize it for easily to read and good visual.
+So, I end up with creating a website that analyze the score and visualize it for easily to read and good visual,
+not hard for reading, and also some basic calculation stuff provided.
 
-And also include,
+Features
 
-- The size of input data set provide
+- The size of original input data set provided
 - Ratio calculation supported
 - Reporting for scoring in each subtask
-- Overall summarize the score
+- Overall summarize of the scores
 
 ## Usage
 
