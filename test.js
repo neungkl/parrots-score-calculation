@@ -3,6 +3,10 @@ var app = require('./index.js');
 
 describe('Test Parser', function() {
 
+  /*
+  [ -[[uses 10000 parrots][uses 2000 parrots][uses 3000 parrots][uses 4000 parrots]][[uses 1000 parrots]X[uses 3000 parrots][uses 4000 parrots]][[uses 5000 parrots][uses 10000 parrots][uses 15000 parrots]T[uses 25000 parrots][uses 30000 parrots]][[uses 3456 parrots][uses 6666 parrots][uses 3000 parrots][uses 18000 parrots][uses 5000 parrots][uses 12000 parrots][uses 7000 parrots]] ]
+  */
+
   var sample = [
     '[ [uses 40 parrots][[uses 10 parrots][uses 20 parrots][uses 30 parrots][uses 40 parrots]][[uses 100 parrots][uses 200 parrots][uses 300 parrots][uses 400 parrots]][[uses 1000 parrots][uses 2000 parrots][uses 3000 parrots][uses 4000 parrots][uses 5000 parrots][uses 6000 parrots]][[uses 1000 parrots][uses 2000 parrots][uses 3000 parrots][uses 4000 parrots][uses 5000 parrots][uses 6000 parrots][uses 7000 parrots]] ] ',
     '[ -[[uses 10 parrots][uses 20 parrots][uses 30 parrots][uses 40 parrots]][[uses 100 parrots][uses 200 parrots][uses 300 parrots][uses 400 parrots]][[uses 1000 parrots][uses 2000 parrots][uses 3000 parrots][uses 4000 parrots][uses 5000 parrots][uses 6000 parrots]][[uses 1000 parrots][uses 2000 parrots][uses 3000 parrots][uses 4000 parrots][uses 5000 parrots][uses 6000 parrots][uses 7000 parrots]] ] ',

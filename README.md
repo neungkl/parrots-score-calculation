@@ -8,7 +8,7 @@ A project to passing the score result and parsing it to easily visually version.
 
 :point_right: Try demo [https://neungkl.github.io/parrots-score-calculation/](https://neungkl.github.io/parrots-score-calculation/)
 
-<img src="preview.png" width="600">
+<img src=".github/preview.png" width="600">
 
 ## Introduction
 
@@ -23,25 +23,37 @@ Then, the website will grading your code and sent the result to you.
 But the result is rather hard for examine. Here are an example of result.
 
 ```
-# Case 1
 [-[-X-T][TTX-][--XXTT][--XXTXX]]
+```
 
-# Case 2
+Or maybe like,
+
+```
 [[uses 222 parrots][-X-T][T[uses 123 parrots]X-][--XXTT][--[uses 10 parrots]XTX[uses 20 parrots]]]
+```
 
-# Case 3
+Or like,
+
+```
 [ [uses 40 parrots][[uses 10 parrots][uses 20 parrots][uses 30 parrots][uses 40 parrots]][[uses 100 parrots][uses 200 parrots][uses 300 parrots][uses 400 parrots]][[uses 1000 parrots][uses 2000 parrots][uses 3000 parrots][uses 4000 parrots][uses 5000 parrots][uses 6000 parrots]][[uses 1000 parrots][uses 2000 parrots][uses 3000 parrots][uses 4000 parrots][uses 5000 parrots][uses 6000 parrots][uses 7000 parrots]] ]
 ```
 
 So, I end up with creating a website that analyze the score and visualize it for easily to read and good visual,
 not hard for reading, and also some basic calculation stuff provided.
 
-Features
+## Features
+
+- Convert long pattern text to readable table
+
+<img src=".github/preview.png" width="400">
 
 - The size of original input data set provided
 - Ratio calculation supported
 - Reporting for scoring in each subtask
 - Overall summarize of the scores
+- Leaderboards provided
+
+<img src=".github/leaderboards.png" width="600">
 
 ## Usage
 
@@ -57,6 +69,10 @@ For testing my code. Run following command below ([Node.JS](https://nodejs.org/e
 npm install
 npm run-script test
 ```
+
+### Leaderboards Fetching
+
+*Not available yet*
 
 ## Author
 
