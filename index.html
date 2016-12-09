@@ -86,19 +86,75 @@
         <div class="color-explain-each">
           But in IOI competition. "Every" scores must colored with
           <span class="cyan-box desc-box">Cyan</span> or
-          <span class="purple-box desc-box">Purple</span>
-          for perfect scores (100/100).
+          <span class="purple-box desc-box">Purple</span> for perfect scores (100/100).
         </div>
       </div>
+    </div>
+    <div class="small-12 large-6 large-centered columns">
+      <div>Leaderboards (Unofficial)</div>
+      <div class="thin-font" style="font-size: 0.8rem;">
+        "Not Pass" means the submission isn't pass every task.
+      </div>
+      <div class="space-v-small"></div>
+      <div class="leaderboards-timestamp thin-font" style="font-size: 0.9rem;"></div>
+    </div>
+    <div class="small-12 large-8 large-centered columns">
+      <div class="space-v-medium"></div>
+      <canvas id="leaderboards-graph"></canvas>
     </div>
 
     <div class="space-v-large"></div>
 
     <span>&nbsp;</div>
 
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+  <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js"
+    integrity="sha256-RASNMNlmRtIreeznffYMDUxBXcMRjijEaaGF/gxT6vw="
+    crossorigin="anonymous"></script>
   <script src="index.js"></script>
   <script>
+
+  function format(score) {
+    var ret = {
+      x: [],
+      y: [],
+      backgroundColor: []
+    };
+
+    var colorMap = {
+      'red': 'rgb(220, 43, 43)',
+      'orange': 'rgb(251, 151, 23)',
+      'yellow': 'rgb(247, 221, 19)',
+      'green': 'rgb(84, 154, 13)',
+      'cyan': 'rgb(10, 135, 175)',
+      'purple': 'rgb(99, 11, 153)'
+    };
+
+    score = score.filter(function(x) { return x > 1}).sort(function(a,b) {
+      if(a < b) return -1;
+      if(a > b) return 1;
+      return 0;
+    });
+
+    for(var i=0; i<score.length; i++) {
+      if(score[i] > 15) {
+        ret.x.push(15);
+        ret.backgroundColor.push(colorMap['red']);
+        ret.y.push((i+1) + ' Not Pass');
+      } else {
+        ret.x.push(Math.round(score[i] * 1000) / 1000);
+        ret.backgroundColor.push(colorMap[ratioToColor(score[i])]);
+        ret.y.push(i+1);
+      }
+    }
+
+    return ret;
+  }
+
   $(function() {
 
     $('.error').hide();
@@ -113,16 +169,62 @@
 
         var ratio = result.sum / result.expectSum;
 
-        $('.summarize').html(
-          '<div>You use ' + result.sum + ' / ' + result.expectSum + ' birds. ' +
-          'With ratio <div class="ratio-box ' + ratioToColor(ratio) + '-box">&nbsp;' +
-          Math.round(ratio * 100) / 100 + '&nbsp;</div></div>'
-        );
+        console.log(result.pass);
+        if(result.pass === 5) {
+          $('.summarize').html(
+            '<div>You use ' + result.sum + ' / ' + result.expectSum + ' birds. ' +
+            'With ratio <div class="ratio-box ' + ratioToColor(ratio) + '-box">&nbsp;' +
+            Math.round(ratio * 1000) / 1000 + '&nbsp;</div></div>'
+          );
+        } else {
+          $('.summarize').html(
+            '<div>You use ' + result.sum + ' / ' + result.expectSum + ' birds. ' +
+            'But you didn\'t pass every task. So, your scores is <div class="ratio-box orange-box"> ' +
+            (result.pass === 0 ? 0 : 9 - ((4 - result.pass) / 2)) + ' / 10 </div></div>'
+          );
+        }
         $('.error').hide();
       } else {
         $('.error').show().text(result.msg);
       }
     });
+
+    $.get('public.json', function(content) {
+
+      var time = new Date(content.timestamp);
+      $('.leaderboards-timestamp').text('Last Update : ' + time)
+      var formatted = format(content.score);
+
+      var myBarChart = new Chart(
+        document.getElementById('leaderboards-graph'),
+        {
+          type: 'bar',
+          data: {
+            labels: formatted.y,
+            datasets: [
+              {
+                label: 'Score',
+                borderWidth: 0,
+                data: formatted.x,
+                borderColor: formatted.backgroundColor,
+                backgroundColor: formatted.backgroundColor
+              }
+            ]
+          },
+          options: {
+            legend: {
+            	display: false
+            },
+            scales: {
+              xAxes: [{
+                display: false
+              }]
+            }
+          }
+        }
+      );
+    });
+
   });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.4/foundation.js"></script>

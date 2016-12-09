@@ -12,11 +12,8 @@ var parseScoreInEachSubTask = function(str) {
 
   var score = [];
 
-  var t = 0;
-
   while (true) {
     match = eachCaseToken.exec(str);
-    if (t++ > 10) break;
     if (match == null) break;
     match = match[0];
     str = str.replace(eachCaseToken, '');
@@ -100,6 +97,7 @@ var dataToTable = function(data) {
   var sum = 0;
   var expectSum = 0;
 
+  var pass = 5;
   var C = data[data.length - 1].length;;
 
   txt += '<thead><tr>';
@@ -131,7 +129,8 @@ var dataToTable = function(data) {
         txt += '<div>' + Math.round(data[i][j] / expectScore[i][j] * 100) / 100 + '</div>';
         txt += '</div>';
         sum += data[i][j];
-      } else {
+        } else {
+          if(pass === 5) pass = i;
         txt += '<div class="red-box error-case-box result-box">' + data[i][j] + '</div>';
       }
 
@@ -143,13 +142,18 @@ var dataToTable = function(data) {
   txt += '</tbody>'
 
   txt += '</table>';
+
   return {
+    pass: pass,
     html: txt,
     sum: sum,
     expectSum: expectSum
   };
 }
 
-module.exports = {
-  extractInfomation: extractInfomation
-};
+if(typeof module !== "undefined") {
+  module.exports = {
+    extractInfomation: extractInfomation,
+    expectScore: expectScore
+  };
+}
