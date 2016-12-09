@@ -1,2 +1,7 @@
 node_modules/
 tmp.*
+private.json
+tmp
+
+# Public soon
+fetch.js
