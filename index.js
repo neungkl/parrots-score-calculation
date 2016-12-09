@@ -1,4 +1,4 @@
-var eachCaseToken = /^(\[uses \d+ parrots\]|\-|T|X)/;
+var eachCaseToken = /^(\[uses \d+ parrots\]|\-|T|X|x)/;
 
 var expectScore = [
   [80],
@@ -21,7 +21,7 @@ var parseScoreInEachSubTask = function(str) {
     match = match[0];
     str = str.replace(eachCaseToken, '');
 
-    if (/(\-|T|X)/.test(match)) {
+    if (/(\-|T|X|x)/.test(match)) {
       score.push(match);
     } else {
       match = /\d+/.exec(match)[0];
@@ -43,7 +43,7 @@ var extractInfomation = function(str) {
     };
   }
 
-  var pattern = /^\s*(\[\s*(\[uses \d+ parrots\]|\-|T|X)(\[(\[uses +\d+ parrots\]|\-|T|X)+\])+\s*\])\s*$/;
+  var pattern = /^\s*(\[\s*(\[uses \d+ parrots\]|\-|T|X|x)(\[(\[uses +\d+ parrots\]|\-|T|X|x)+\])+\s*\])\s*$/;
 
   var correctFormat = true;
   var result = [];
@@ -64,7 +64,7 @@ var extractInfomation = function(str) {
     result[0] = parseScoreInEachSubTask(match);
 
     for (var i = 1; i < 5; i++) {
-      token = /\[(\[uses \d+ parrots\]|\-|T|X)+\]/;
+      token = /\[(\[uses \d+ parrots\]|\-|T|X|x)+\]/;
       subtask = token.exec(str)[0];
       str = str.replace(token, '');
 

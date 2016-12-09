@@ -8,6 +8,7 @@ describe('Test Parser', function() {
     '[ -[[uses 10 parrots][uses 20 parrots][uses 30 parrots][uses 40 parrots]][[uses 100 parrots][uses 200 parrots][uses 300 parrots][uses 400 parrots]][[uses 1000 parrots][uses 2000 parrots][uses 3000 parrots][uses 4000 parrots][uses 5000 parrots][uses 6000 parrots]][[uses 1000 parrots][uses 2000 parrots][uses 3000 parrots][uses 4000 parrots][uses 5000 parrots][uses 6000 parrots][uses 7000 parrots]] ] ',
     '[ -[-X-T][TTX-][--XXTT][--XXTXX] ] ',
     ' -[-X-T][TTX-][--XXTT][--XXTXX] ',
+    ' -[-x-T][TTx-][--xxTT][--xxTxx] ',
     ' [uses 222 parrots][-X-T][T[uses 123 parrots]X-][--XXTT][--[uses 10 parrots]XTX[uses 20 parrots]] '
   ];
 
@@ -41,6 +42,13 @@ describe('Test Parser', function() {
       ['-', '-', 'X', 'X', 'T', 'X', 'X'],
     ],
     [
+      ['-'],
+      ['-', 'x', '-', 'T'],
+      ['T', 'T', 'x', '-'],
+      ['-', '-', 'x', 'x', 'T', 'T'],
+      ['-', '-', 'x', 'x', 'T', 'x', 'x'],
+    ],
+    [
       [222],
       ['-', 'X', '-', 'T'],
       ['T', 123, 'X', '-'],
@@ -60,5 +68,3 @@ describe('Test Parser', function() {
     })(i);
   }
 });
-
-[uses 80 parrots][[uses 800 parrots][uses 1600 parrots][uses 3000 parrots][uses 4000 parrots]][[uses 5000 parrots][uses 3000 parrots][uses 1600 parrots][uses 2000 parrots]][[uses 3000 parrots]-[uses 5000 parrots][uses 5000 parrots][uses 4000 parrots][uses 2000 parrots]][[uses 3456 parrots][uses 12345 parrots][uses 12345 parrots][uses 12345 parrots][uses 12345 parrots]X-]
