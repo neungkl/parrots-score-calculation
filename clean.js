@@ -48,22 +48,20 @@ fs.readFile(privateDataPath, 'utf8', function(err, content) {
         if(mapScore.hasOwnProperty(userID)) {
           if(sum / sumExpect < mapScore[userID].score) {
             mapScore[userID] = {
-              // submissions: eachData.submittion_url,
-              score: sum / sumExpect,
-              // all: eachData.score
+              score: sum / sumExpect
             }
           }
         } else {
           mapScore[userID] = {
-            // submissions: eachData.submittion_url,
-            score: sum / sumExpect,
-            // all: eachData.score
+            score: sum / sumExpect
           }
         }
       } else {
-        mapScore[userID] = {
-          score: INFINITY
-        };
+        if(!mapScore.hasOwnProperty(userID)) {
+          mapScore[userID] = {
+            score: INFINITY
+          };
+        }
       }
     }
 
