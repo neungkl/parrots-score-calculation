@@ -2,7 +2,7 @@ var fs = require('fs');
 
 var privateDataPath = 'private.json';
 var publicDataPath = 'public.json';
-var app = require('./index.js');
+var app = require('../web/index.js');
 
 var mapScore = {};
 var INFINITY = 100;
