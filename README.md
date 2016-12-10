@@ -3,7 +3,7 @@ Parrots Score Calculation
 
 [![Build Status](https://travis-ci.org/neungkl/parrots-score-calculation.svg?branch=master)](https://travis-ci.org/neungkl/parrots-score-calculation)
 
-:rocket: This work associate with 2110327 Algorithm Design class.
+:rocket: This project associated with 2110327 Algorithm Design class.
 A project to passing the score result and parsing it to easily visually version.
 
 :point_right: Try demo [https://neungkl.github.io/parrots-score-calculation/](https://neungkl.github.io/parrots-score-calculation/)
