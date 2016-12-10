@@ -1,6 +1,7 @@
 node_modules/
 tmp.*
 private.json
+**/.DS_Store
 tmp
 
 # Public soon

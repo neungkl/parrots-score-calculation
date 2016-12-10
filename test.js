@@ -1,5 +1,5 @@
 var chai = require('chai');
-var app = require('./index.js');
+var app = require('./web/index.js');
 
 describe('Test Parser', function() {
 
