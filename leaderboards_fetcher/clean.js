@@ -1,7 +1,7 @@
 var fs = require('fs');
 
-var privateDataPath = 'private.json';
-var publicDataPath = 'public.json';
+var privateDataPath = __dirname + '/private.json';
+var publicDataPath = __dirname + '/public.json';
 var app = require('../web/index.js');
 
 var mapScore = {};
