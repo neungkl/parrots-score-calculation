@@ -72,7 +72,7 @@ npm run-script test
 
 ### Leaderboards Fetching
 
-*Not available yet*
+*Not available yet. Currently some files and source code in `Leaderboards_fetcher` are hiding. It will be released soon after 13th Dec*
 
 ## Author
 
