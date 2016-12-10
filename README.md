@@ -4,7 +4,9 @@ Parrots Score Calculation
 [![Build Status](https://travis-ci.org/neungkl/parrots-score-calculation.svg?branch=master)](https://travis-ci.org/neungkl/parrots-score-calculation)
 
 :rocket: This project associated with 2110327 Algorithm Design class.
-A project to passing the score result and parsing it to easily visually version.
+Aiming of this project is convert the long text score result from grader into an easily visually version,
+and leaderboards ranking system is also implemented by fetching plain HTML text from juding site 
+and extract information, then visualize to a graph.
 
 :point_right: Try demo [https://neungkl.github.io/parrots-score-calculation/](https://neungkl.github.io/parrots-score-calculation/)
 
