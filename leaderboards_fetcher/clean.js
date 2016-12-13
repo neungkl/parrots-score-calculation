@@ -44,16 +44,26 @@ fs.readFile(privateDataPath, 'utf8', function(err, content) {
         }
       }
 
+      var ratio = sum / sumExpect;
+
       if(check) {
+
+        if(ratio <= 1) {
+          console.log("There are submission ratio < 1 :", ratio);
+          continue;
+        }
+
         if(mapScore.hasOwnProperty(userID)) {
-          if(sum / sumExpect < mapScore[userID].score) {
+          if(ratio < mapScore[userID].score) {
             mapScore[userID] = {
-              score: sum / sumExpect
+              score: ratio,
+              submission: eachData.submittion_url
             }
           }
         } else {
           mapScore[userID] = {
-            score: sum / sumExpect
+            score: ratio,
+            submission: eachData.submittion_url
           }
         }
       } else {
@@ -69,6 +79,8 @@ fs.readFile(privateDataPath, 'utf8', function(err, content) {
       timestamp: content.timestamp,
       score: []
     };
+
+    // console.log(mapScore);
 
     for(var k in mapScore) {
       result.score.push(mapScore[k].score);

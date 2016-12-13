@@ -1,4 +1,5 @@
 var eachCaseToken = /^(\[uses \d+ parrots\]|\-|T|X|x)/;
+var eachCaseToken2 = /^(\d+pr \||\-|T|X|x)/;
 
 var expectScore = [
   [80],
@@ -8,15 +9,17 @@ var expectScore = [
   [800, 1600, 3200, 3000, 2500, 3150, 1650]
 ];
 
-var parseScoreInEachSubTask = function(str) {
+var parseScoreInEachSubTask = function(str, patternType) {
 
   var score = [];
+  var token = (patternType == 1 ? eachCaseToken : eachCaseToken2);
 
   while (true) {
-    match = eachCaseToken.exec(str);
+
+    match = token.exec(str);
     if (match == null) break;
     match = match[0];
-    str = str.replace(eachCaseToken, '');
+    str = str.replace(token, '');
 
     if (/(\-|T|X|x)/.test(match)) {
       score.push(match);
@@ -41,33 +44,46 @@ var extractInfomation = function(str) {
   }
 
   var pattern = /^\s*(\[\s*(\[uses \d+ parrots\]|\-|T|X|x)(\[(\[uses +\d+ parrots\]|\-|T|X|x)+\])+\s*\])\s*$/;
+  var pattern2 = /^\s*(\[\s*(\d+pr \||\-|T|X|x)(\[(\d+pr \||\-|T|X|x)+\])+\s*\])\s*$/;
 
   var correctFormat = true;
   var result = [];
+  var patternType = 1;
 
-  if (pattern.exec(str) == null) {
+  if(pattern.exec(str) == null && pattern2.exec(str) == null) {
     str = '[' + str + ']';
-    if (pattern.exec(str) == null) correctFormat = false;
+    if (pattern.exec(str) == null && pattern2.exec(str) == null) correctFormat = false;
   }
 
   if (correctFormat) {
+
+    if(pattern.exec(str) == null) patternType = 2;
 
     str = str.trim();
     str = str.substring(1, str.length - 1).trim();
 
     var token;
 
-    match = eachCaseToken.exec(str.trim())[0];
-    result[0] = parseScoreInEachSubTask(match);
+    if(patternType == 1) {
+      match = eachCaseToken.exec(str.trim())[0];
+    } else {
+      match = eachCaseToken2.exec(str.trim())[0];
+    }
+
+    result[0] = parseScoreInEachSubTask(match, patternType);
 
     for (var i = 1; i < 5; i++) {
-      token = /\[(\[uses \d+ parrots\]|\-|T|X|x)+\]/;
+      if(patternType == 1) {
+        token = /\[(\[uses \d+ parrots\]|\-|T|X|x)+\]/;
+      } else {
+        token = /\[(\d+pr \||\-|T|X|x)+\]/;
+      }
       subtask = token.exec(str)[0];
       str = str.replace(token, '');
 
       subtask = subtask.substring(1, subtask.length - 1);
 
-      result[i] = parseScoreInEachSubTask(subtask);
+      result[i] = parseScoreInEachSubTask(subtask, patternType);
 
     }
 

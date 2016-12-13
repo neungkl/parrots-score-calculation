@@ -13,7 +13,9 @@ describe('Test Parser', function() {
     '[ -[-X-T][TTX-][--XXTT][--XXTXX] ] ',
     ' -[-X-T][TTX-][--XXTT][--XXTXX] ',
     ' -[-x-T][TTx-][--xxTT][--xxTxx] ',
-    ' [uses 222 parrots][-X-T][T[uses 123 parrots]X-][--XXTT][--[uses 10 parrots]XTX[uses 20 parrots]] '
+    ' [uses 222 parrots][-X-T][T[uses 123 parrots]X-][--XXTT][--[uses 10 parrots]XTX[uses 20 parrots]] ',
+    ' 80pr |[-6151pr |-4318pr |][4318pr |-6151pr |-][xxx6198pr |x-][6146pr |xxxxxx] ',
+    ' [ 66pr |[535pr |1283pr |1180pr |778pr |][778pr |1180pr |1283pr |535pr |][1692pr |3221pr |3072pr |1231pr |3395pr |510pr |][1226pr |3391pr |11431pr |10069pr |7171pr |11074pr |3566pr |] ] '
   ];
 
   var result = [
@@ -58,6 +60,20 @@ describe('Test Parser', function() {
       ['T', 123, 'X', '-'],
       ['-', '-', 'X', 'X', 'T', 'T'],
       ['-', '-', 10, 'X', 'T', 'X', 20],
+    ],
+    [
+      [80],
+      ['-', 6151, '-', 4318],
+      [4318, '-', 6151, '-'],
+      ['x', 'x', 'x', 6198, 'x', '-'],
+      [6146, 'x', 'x', 'x', 'x', 'x', 'x']
+    ],
+    [
+      [66],
+      [535, 1283, 1180, 778],
+      [778, 1180, 1283, 535],
+      [1692, 3221, 3072, 1231, 3395, 510],
+      [1226, 3391, 11431, 10069, 7171, 11074, 3566]
     ]
   ];
 
