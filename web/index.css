@@ -47,12 +47,8 @@ textarea {
   box-sizing: border-box;
 }
 
-a {
+menu {
   color: inherit;
-}
-
-a:hover {
-  color: #eee;
 }
 
 .error {
