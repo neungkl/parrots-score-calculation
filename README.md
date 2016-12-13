@@ -5,7 +5,7 @@ Parrots Score Calculation
 
 :rocket: This project associated with 2110327 Algorithm Design class.
 Aiming of this project is convert the long text score result from grader into an easily visually version,
-and leaderboards ranking system is also implemented by fetching plain HTML text from juding site 
+and leaderboards ranking system is also implemented by fetching plain HTML text from juding site
 and extract information, then visualize to a graph.
 
 :point_right: Try demo [https://neungkl.github.io/parrots-score-calculation/](https://neungkl.github.io/parrots-score-calculation/)
@@ -38,6 +38,12 @@ Or like,
 
 ```
 [ [uses 40 parrots][[uses 10 parrots][uses 20 parrots][uses 30 parrots][uses 40 parrots]][[uses 100 parrots][uses 200 parrots][uses 300 parrots][uses 400 parrots]][[uses 1000 parrots][uses 2000 parrots][uses 3000 parrots][uses 4000 parrots][uses 5000 parrots][uses 6000 parrots]][[uses 1000 parrots][uses 2000 parrots][uses 3000 parrots][uses 4000 parrots][uses 5000 parrots][uses 6000 parrots][uses 7000 parrots]] ]
+```
+
+Maybe like this,
+
+```
+[ 9pr |[530pr |1282pr |1180pr |778pr |][778pr |1180pr |1282pr |530pr |][1682pr |3221pr |3073pr |1230pr |3400pr |503pr |][1229pr |3388pr |11446pr |10066pr |7168pr |11074pr |3566pr |] ]
 ```
 
 So, I end up with creating a website that analyze the score and visualize it for easily to read and good visual,
@@ -74,7 +80,18 @@ npm run-script test
 
 ### Leaderboards Fetching
 
-*Not available yet. Currently some files and source code in `Leaderboards_fetcher` are hiding. It will be released soon after 13th Dec*
+For fetching the leaderboards. You must already have user and password for [https://www.nattee.net/grader/](https://www.nattee.net/grader/). The way I implemented is run the script for fetching every submission in judging website.
+
+Then, convert the HTML plain text to a graph by extracting DOM elements.
+
+**How to Use**
+
+1. Configuration file `private.tmp.json` in `leaderboards_fecher` folder, where `startSubmission` is number to fetching the score.
+2. Change `private.tmp.json` to `private.json`
+3. Run `node fetch.js <USER> <PASSWORD>`. Replace `<USER>` and `<PASSWORD>` by your user and password.
+3. Waiting for fetching. (there are several log shown in command)
+4. After fetching complete. Run `node clean.js` for update the score.
+5. Open `index.html`
 
 ## Author
 

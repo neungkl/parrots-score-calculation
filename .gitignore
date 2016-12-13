@@ -3,6 +3,3 @@ tmp.*
 private.json
 **/.DS_Store
 tmp
-
-# Public soon
-fetch.js
